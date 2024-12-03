@@ -1,7 +1,11 @@
 import '../assets/CSS/layout.css';
 import {flowers} from './FlowerDB';
 
-export default function Product(){
+export default function Product({setCart,setTotal,}){
+
+    const addToCart =()=>{
+        
+    }
     
     return(
         flowers.map(a=>

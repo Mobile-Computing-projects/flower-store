@@ -1,9 +1,13 @@
 import Product from './Product';
 import Cart from './Cart';
 import '../assets/CSS/layout.css';
+import {useState} from "react";
 
 export default function Products(){
    
+    const [cart,setCart]=useState([]);
+    const [total,setTotal]=useState(0);
+
     return(
         <>
             <div className="item1">
@@ -13,14 +17,14 @@ export default function Products(){
                 <h4 className="card-title">Buy flowers</h4>
                 <div className="grid-container">
                     {
-                        Product()
+                        <Product setCart={setCart} setTotal={setTotal}/>
                     }
                 </div>
 
             </div>
             <div className="item3">
                 {
-                    Cart()
+                    <Cart/>
                 }
             </div>
         </>

@@ -1,5 +1,6 @@
 export default function Cart(props) {
     
+    
     return (
         <div className="table-container">
             <h4 className="card-title">Cart</h4>
@@ -12,11 +13,11 @@ export default function Cart(props) {
 
                 </thead>
                 {
-                    props.getCart.map((item, index) => (
+                    props.addToCart.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.flowerName}</td>
+                            <td>{item.name}</td>
                             <td>{item.quantity}</td>
-                            <td>{item.quantity*item.flowerPrice}</td>
+                            <td>{item.price}</td>
                         </tr>
                     ))
                 }
