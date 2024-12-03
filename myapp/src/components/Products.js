@@ -1,4 +1,5 @@
-
+import Product from './Product';
+import Cart from './Cart';
 import '../assets/CSS/layout.css';
 
 
@@ -13,14 +14,14 @@ export default function Products(){
                 <h4 className="card-title">Buy flowers</h4>
                 <div className="grid-container">
                     {
-                        //product
+                        Product()
                     }
                 </div>
 
             </div>
             <div className="item3">
                 {
-                //cart
+                    Cart()
                 }
             </div>
         </>
