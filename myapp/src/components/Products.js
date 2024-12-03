@@ -2,7 +2,6 @@ import Product from './Product';
 import Cart from './Cart';
 import '../assets/CSS/layout.css';
 
-
 export default function Products(){
    
     return(

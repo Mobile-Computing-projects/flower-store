@@ -1,4 +1,4 @@
-export default function Cart() {
+export default function Cart(props) {
     
     return (
         <div className="table-container">
@@ -12,7 +12,13 @@ export default function Cart() {
 
                 </thead>
                 {
-                    
+                    props.getCart.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.flowerName}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.quantity*item.flowerPrice}</td>
+                        </tr>
+                    ))
                 }
                 <tr>
                     <td >Grand Total : </td>
