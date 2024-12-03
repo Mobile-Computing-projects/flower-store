@@ -30,7 +30,7 @@ export default function Products(){
             </div>
             <div className="item3">
                 {
-                    <Cart/>
+                    <Cart cart={cart} total={total} />
                 }
             </div>
         </>

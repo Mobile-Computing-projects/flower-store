@@ -7,8 +7,20 @@ export default function Product({setCart,setTotal,flower}){
     const [qty,setQty] = useState();
 
     const addToCart =()=>{
-
+        if(qty>0){
+            setCart((prev)=>
+                [...prev,{name:flower.name,quantity:qty,price:flower.price}]
+            )
+            setTotal((total)=>
+                total +qty*flower.price
+            )
+    
+        }
+        
     }
+
+
+    
 
     
     return(
@@ -17,12 +29,12 @@ export default function Product({setCart,setTotal,flower}){
             <div class="card">
             <img  src={require("../assets/image/" + flower.img)}  />
                 <div class="card-body">
-                    <h5 class="card-title">{flower.name} Price:</h5>
+                    <h5 class="card-title">{flower.name} Price:{flower.price}</h5>
                     <div class="quantity-container">
                         <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" name="quantity" onChange={(e)=>setQty(e.target.value)}/>
+                        <input min={0} type="number" id="quantity" name="quantity" onChange={(e)=>setQty(e.target.value)}/>
                     </div>
-                    <button class="card-button">Add to Cart</button>
+                    <button class="card-button" onClick={()=>addToCart()}>Add to Cart</button>
                 </div>
             </div>
         </div>
